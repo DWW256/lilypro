@@ -1,5 +1,7 @@
 # lilypro
-Some easy-to-use, easy-to-read goodies for use in lilypond
+Some easy-to-use, easy-to-read goodies for use in lilypond.
+
+To use lilypro, just download the file, extract it to somewhere on your hard disk or wherever, and use an \include to include it in your lilypond file.  Put \global-lilypro inside of your "global" expression or all of your music expressions, if that's more your style.  Enjoy!
 
 lilypro does the following things.  If you don't like any of them, then change them yourself.  Now stop bugging me!  :-)
 
