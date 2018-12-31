@@ -1,8 +1,9 @@
-\version "2.18.2"
-
 \paper {
   #(set-paper-size "letter")
   ragged-bottom = ##t
+  
+  %{ Fancy fonts: apply fonts.scm patch before using on 2.18.0–2.19.11.
+  
   #(define fonts
     (set-global-fonts
       #:music "emmentaler"
@@ -12,13 +13,15 @@
       #:typewriter "Fira Mono"
       #:factor (/ staff-height pt 20)
   ))
+  
+  %}
 }
 
 \header {
   tagline = ##f
 }
 
-global-pro = {
+global-lilypro = {
   \override Score.BarNumber.break-visibility = ##(#f #t #t)
   \set minorChordModifier = \markup { "-" }
   \set majorSevenSymbol = \markup {\whiteTriangleMarkup 7}
@@ -35,6 +38,8 @@ subitoF = \tweak DynamicText.self-alignment-X #RIGHT #(make-dynamic-script
                   #:dynamic "f")))
 
 sustainReset = \sustainOff\sustainOn
+
+%{ Unfinished
 
 hideInstrument = {
   \omit Staff.BarLine
@@ -54,10 +59,11 @@ showInstrument = {
   \undo \omit Staff.StaffSymbol
 }
 
+%}
+
 \layout {
   \context {
     \PianoStaff
-    \consists "Span_stem_engraver"
     \consists "Span_arpeggio_engraver"
   }
 }
