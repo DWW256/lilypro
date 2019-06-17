@@ -19,7 +19,7 @@
 global-lilypro = {
 	\accidentalStyle modern
 	\override Score.BarNumber.break-visibility = ##(#f #t #t)
-	\set minorChordModifier = \markup { "-" }
+	\set minorChordModifier = \markup { "–" }
 	\set majorSevenSymbol = \markup {\whiteTriangleMarkup 7}
 }
 
