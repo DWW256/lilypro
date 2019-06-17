@@ -1,26 +1,30 @@
 \paper {
-  #(set-paper-size "letter")
-  ragged-bottom = ##t
-  #(define fonts
-    (set-global-fonts
-      #:music "emmentaler"
-      #:brace "emmentaler"
-      #:roman "TeX Gyre Pagella"
-      #:sans "Cantarell"
-      #:typewriter "Fira Mono"
-      #:factor (/ staff-height pt 20)
-  ))
+	#(set-paper-size "letter")
+	ragged-bottom = ##t
+	#(define fonts
+		(set-global-fonts
+			#:music "emmentaler"
+			#:brace "emmentaler"
+			#:roman "TeX Gyre Pagella"
+			#:sans "Cantarell"
+			#:typewriter "Fira Mono"
+			#:factor (/ staff-height pt 20)
+		))
 }
 
 \header {
-  tagline = ##f
+	tagline = ##f
 }
 
 global-lilypro = {
 	\accidentalStyle modern
 	\override Score.BarNumber.break-visibility = ##(#f #t #t)
-	\set minorChordModifier = \markup { "–" }
-	\set majorSevenSymbol = \markup {\whiteTriangleMarkup 7}
+	\set minorChordModifier = \markup { "-" }
+	\set majorSevenSymbol = \markup {
+		\override #'(thickness . 0.15)
+		\scale #'(0.75 . 0.75) \whiteTriangleMarkup
+	7
+	}
 }
 
 keyNone = \withMusicProperty #'untransposable ##t \key c \major
@@ -69,14 +73,14 @@ naturalizeMusic =
    (naturalize m))
 
 subitoP = \tweak DynamicText.self-alignment-X #RIGHT #(make-dynamic-script
-  (markup #:line (#:normal-text
-                  #:italic "subito"
-                  #:dynamic "p")))
+	(markup #:line (#:normal-text
+			#:italic "subito"
+			#:dynamic "p")))
 
 subitoF = \tweak DynamicText.self-alignment-X #RIGHT #(make-dynamic-script
-  (markup #:line (#:normal-text
-                  #:italic "subito"
-                  #:dynamic "f")))
+	(markup #:line (#:normal-text
+			#:italic "subito"
+			#:dynamic "f")))
 
 sustainReset = \sustainOff\sustainOn
 
