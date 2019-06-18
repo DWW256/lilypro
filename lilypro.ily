@@ -17,7 +17,7 @@
 }
 
 global-lilypro = {
-	\accidentalStyle modern
+	\accidentalStyle modern-cautionary
 	\override Score.BarNumber.break-visibility = ##(#f #t #t)
 	\set minorChordModifier = \markup { "–" }
 	\set majorSevenSymbol = \markup {
